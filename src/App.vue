@@ -1,47 +1,64 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <header>{{ $t('invitation') }}</header>
+  <ul class="locations">
+    <li v-for="location in locations" :key="location.name">
+      <h3>{{ location.name }}</h3>
+      <section>
+        <h4>Address</h4>
+        <p>{{ location.address }}</p>
+      </section>
+      <section>
+        <h4>Time</h4>
+        <p>{{ location.time }}</p>
+      </section>
+    </li>
+  </ul>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const locations = ref([
+  { name: 'city-hall', time: '14h00', address: '123 Main St', city: 'Springfield', state: 'IL' },
+  { name: 'church', time: '15h30', address: '123 Main St', city: 'Springfield', state: 'IL' },
+  { name: 'restaurant', time: '19h00', address: '123 Main St', city: 'Springfield', state: 'IL' },
+])
+</script>
+
+<style lang="scss">
+@use '@/assets/global';
+
+body {
+  background-color: global.$primary--color;
+  color: global.$secondary--color;
 }
+</style>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+<style lang="scss" scoped>
+@use '@/assets/global';
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+.locations {
+  list-style: none;
+  padding: 0;
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+  li {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: global.$secondary--color;
+    color: global.$primary--color;
+    width: 70%;
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+    h3 {
+      margin-top: 0;
+    }
+
+    section {
+      margin-bottom: 1rem;
+
+      h4 {
+        margin-top: 0;
+      }
+    }
   }
 }
 </style>
