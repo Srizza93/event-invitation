@@ -1,3 +1,10 @@
 {
-  "invitation": "Dearest Friend, The time is almost here! Simone Rizza and Martina Di Marco are so excited to celebrate their love and commitment with you by their side. On the 7th of February, 2025, we’ll gather to witness a beautiful union, share in the joy of this special day, and create memories we’ll treasure forever. Your presence means the world to us, and we can’t wait to celebrate this unforgettable moment together. With love and gratitude, Simone & Martina"
+  "invitation": "Dearest Friend,\n\n The time is almost here!\n Simone Rizza and Martina Di Marco are so excited to celebrate their love and commitment with you by their side.\n On the 7th of February, 2025, we’ll gather to witness a beautiful union, share in the joy of this special day, and create memories we’ll treasure forever.\n Your presence means the world to us, and we can’t wait to celebrate this unforgettable moment together.\n\n With love and gratitude,\n\n Simone & Martina",
+  "locations": {
+    "address": "Address",
+    "time": "Time",
+    "restaurant": "Restaurant",
+    "church": "Church",
+    "city-hall": "City Hall"
+  }
 }
