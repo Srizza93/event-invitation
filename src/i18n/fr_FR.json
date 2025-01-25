@@ -6,5 +6,8 @@
     "restaurant": "Restaurant",
     "church": "Église",
     "city-hall": "Mairie"
+  },
+  "languages": {
+    "select-language": "Choisissez la langue"
   }
 }

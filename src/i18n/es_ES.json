@@ -1,0 +1,14 @@
+{
+  "invitation": "Queridos Todos,\n\n ¡El gran día se acerca!\n Simone Rizza y Martina Di Marco están emocionados de compartir con ustedes este momento tan especial.\n El 7 de febrero de 2025 nos reuniremos para celebrar una hermosa unión, compartir la alegría de este día único y crear recuerdos inolvidables.\n Su presencia es un verdadero regalo para nosotros, y estamos deseando celebrar juntos.\n\n Con cariño y gratitud,\n\n Simone y Martina",
+
+  "locations": {
+    "address": "Dirección",
+    "time": "Hora",
+    "restaurant": "Restaurante",
+    "church": "Iglesia",
+    "city-hall": "Ayuntamiento"
+  },
+  "languages": {
+    "select-language": "Selecciona el Idioma"
+  }
+}

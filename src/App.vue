@@ -25,10 +25,25 @@
       </div>
     </li>
   </ul>
+  <options-modal
+    :selected-language="selectedLanguage"
+    :options="availableLanguages"
+    :is-modal-open="isLanguageModalOpen"
+    @select-option="selectLanguage"
+    @open-modal="toggleModal"
+    @close-modal="toggleModal"
+  />
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
+
+import OptionsModal from './components/OptionsModal.vue'
+import { getLanguageFlag, getLanguageId, selectLanguage } from './services/languageService'
+import i18n from './i18n'
+import { onMounted } from 'vue'
+
+import { initLanguage } from '@/services/languageService'
 
 const locations = ref([
   { name: 'city-hall', time: '14h00', address: '39 Rue Faidherbe, 59810 Lesquin' },
@@ -39,6 +54,24 @@ const locations = ref([
 const generateGoogleMapsLink = (address: string) => {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
 }
+
+const isLanguageModalOpen = ref(false)
+const availableLanguages = computed(() =>
+  i18n.global.availableLocales.map((lang: string) => ({
+    name: lang,
+    img: getLanguageFlag(lang),
+    selected: getLanguageId(i18n.global.locale) === lang,
+  })),
+)
+const selectedLanguage = computed(() =>
+  availableLanguages.value.find((language) => language.selected),
+)
+
+function toggleModal() {
+  isLanguageModalOpen.value = !isLanguageModalOpen.value
+}
+
+onMounted(() => initLanguage())
 </script>
 
 <style lang="scss">
@@ -110,18 +143,24 @@ body {
   list-style: none;
   padding: 0;
 
+  &__title {
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #8b4513;
+    border-bottom: 1px solid #8b4513;
+    padding-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
+  }
+
   li {
     margin-bottom: 2rem;
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.8); // Slightly transparent white background
     color: global.$secondary--color;
-    width: 70%;
+    width: 100%;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Adding a subtle shadow
-
-    h3 {
-      margin-top: 0;
-    }
 
     section {
       margin-top: 1rem;
@@ -145,6 +184,7 @@ body {
     text-decoration: underline;
     color: #8b4513; // Dark brown color for links
     transition: color 0.3s;
+    white-space: nowrap;
 
     &:hover {
       color: #a0522d; // Lighter brown on hover

@@ -6,5 +6,8 @@
     "restaurant": "Restaurant",
     "church": "Church",
     "city-hall": "City Hall"
+  },
+  "languages": {
+    "select-language": "Select Language"
   }
 }
