@@ -169,14 +169,4 @@ function getAltImage(optionName: string) {
     }
   }
 }
-
-@media screen and (max-width: 750px) {
-  .options {
-    &__option {
-      &--selected {
-        margin: 0 50px 0 auto;
-      }
-    }
-  }
-}
 </style>
