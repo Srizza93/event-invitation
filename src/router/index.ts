@@ -4,13 +4,14 @@ import HomeView from '@/views/HomeView.vue'
 
 const routes = [
   {
-    path: '',
+    path: '/',
+    name: 'Home',
     component: HomeView,
-    alias: ['', '/'],
   },
   {
-    component: HomeView,
     path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: HomeView,
   },
 ]
 
