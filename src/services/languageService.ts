@@ -20,19 +20,17 @@ export function initLanguage() {
     }
 
     setCookie(LANGUAGE_COOKIE, appLocale)
-    document.title = i18n.global.t('app-title') as string
 
     return appLocale
   } else {
     i18n.global.locale = languageFromCookie as AvailableLocales
-    document.title = i18n.global.t('app-title') as string
   }
 }
 
 export function selectLanguage(language: string) {
   i18n.global.locale = language as AvailableLocales
   setCookie(LANGUAGE_COOKIE, language)
-  document.title = i18n.global.t('app-title') as string
+  document.title = i18n.global.t('app-title')
 }
 
 export function getLanguageId(local: string) {
