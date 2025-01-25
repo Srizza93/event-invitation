@@ -1,18 +1,10 @@
-interface ImportMetaEnv {
-  PROD: boolean
-}
+const fallbackLocale = 'en-EN'
 
 declare global {
-  interface ImportMeta {
-    env: ImportMetaEnv
-  }
-
   interface Window {
-    test?: any
+    test?: boolean
   }
 }
-
-const fallbackLocale = 'en-EN'
 
 export default class AppLocaleService {
   static getAppLocale() {
