@@ -6,7 +6,8 @@
     "time": "Hora",
     "restaurant": "Restaurante",
     "church": "Iglesia",
-    "city-hall": "Ayuntamiento"
+    "city-hall": "Ayuntamiento",
+    "program": "Programa"
   },
   "languages": {
     "select-language": "Selecciona el Idioma"

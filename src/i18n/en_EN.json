@@ -6,7 +6,8 @@
     "time": "Time",
     "restaurant": "Restaurant",
     "church": "Church",
-    "city-hall": "City Hall"
+    "city-hall": "City Hall",
+    "program": "Program"
   },
   "languages": {
     "select-language": "Select Language"
