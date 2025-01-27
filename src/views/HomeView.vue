@@ -17,7 +17,7 @@
             <tr v-if="location.program">
               <th class="section__title">{{ $t('locations.program') }}:</th>
               <td>
-                <a class="section__link" :href="location.program">Link</a>
+                <a class="section__link" :href="location.program">{{ $t('locations.link') }}</a>
               </td>
             </tr>
             <tr>
@@ -70,7 +70,7 @@ const locations = ref([
     time: '15h00',
     address: '79 Rue Pasteur, 59810 Lesquin',
     program:
-      'https://docs.google.com/document/d/15Olvl1-triahwsbiNzkcsZ5C0B0NJ--LMIfFzdAfDFg/edit?tab=t.0',
+      'https://docs.google.com/document/d/1iSf81sO3B4fEY_rfHGtQssiDSkPwh_9tUMp4tc3tTBI/edit?usp=sharing',
   },
   {
     label: 'restaurant',

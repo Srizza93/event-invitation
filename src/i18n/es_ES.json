@@ -7,7 +7,8 @@
     "restaurant": "Restaurante",
     "church": "Iglesia",
     "city-hall": "Ayuntamiento",
-    "program": "Programa"
+    "program": "Programa",
+    "link": "Link"
   },
   "languages": {
     "select-language": "Selecciona el Idioma"
