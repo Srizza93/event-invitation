@@ -14,6 +14,12 @@
       <div class="locations__appointment">
         <table cellspacing="0">
           <tbody>
+            <tr v-if="location.program">
+              <th class="section__title">{{ $t('locations.program') }}:</th>
+              <td>
+                <a class="section__link" :href="location.program">Link</a>
+              </td>
+            </tr>
             <tr>
               <th class="section__title">{{ $t('locations.time') }}:</th>
               <td>{{ location.time }}</td>
@@ -22,7 +28,7 @@
               <th class="section__title">{{ $t('locations.address') }}:</th>
               <td>
                 <a
-                  class="section__address"
+                  class="section__link"
                   :href="generateGoogleMapsLink(location.address)"
                   target="_blank"
                   >{{ location.address }}</a
@@ -63,6 +69,8 @@ const locations = ref([
     name: 'Saint Barthélémy',
     time: '15h00',
     address: '79 Rue Pasteur, 59810 Lesquin',
+    program:
+      'https://docs.google.com/document/d/15Olvl1-triahwsbiNzkcsZ5C0B0NJ--LMIfFzdAfDFg/edit?tab=t.0',
   },
   {
     label: 'restaurant',
@@ -193,7 +201,7 @@ body {
     padding-right: 0.5rem;
   }
 
-  &__address {
+  &__link {
     text-decoration: underline;
     color: #8b4513; // Dark brown color for links
     transition: color 0.3s;
