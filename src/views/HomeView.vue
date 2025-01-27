@@ -61,7 +61,7 @@ const locations = ref([
   {
     label: 'church',
     name: 'Saint Barthélémy',
-    time: '15h30',
+    time: '15h00',
     address: '79 Rue Pasteur, 59810 Lesquin',
   },
   {
